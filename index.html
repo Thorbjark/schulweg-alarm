@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NordPing Schulweg Alarm – Anmeldung</title>
+<style>
+  :root { --gruen: #beff00; --gelb: #ffe600; --rot: #ff4646; --bg: #0b0f0a; --karte: #161c14; --text: #ececec; --grau: #a9b0a4; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.55 Arial, Helvetica, sans-serif; }
+  main { max-width: 640px; margin: 0 auto; padding: 28px 18px 40px; }
+  h1 { font-size: 28px; margin: 0 0 4px; letter-spacing: .5px; }
+  h1 span { color: var(--gelb); }
+  .sub { color: var(--gruen); font-weight: bold; margin: 0 0 22px; }
+  .karte { background: var(--karte); border: 2px solid var(--gruen); border-radius: 16px; padding: 20px; margin-bottom: 18px; }
+  h2 { font-size: 18px; margin: 0 0 10px; color: var(--gruen); }
+  ul { padding-left: 20px; margin: 8px 0; }
+  .knoepfe { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
+  .knopf { flex: 1 1 200px; display: block; text-align: center; padding: 14px 16px; border-radius: 12px;
+           font-weight: bold; text-decoration: none; font-size: 17px; }
+  .an { background: var(--gruen); color: #10140c; }
+  .ab { background: transparent; color: var(--text); border: 2px solid var(--grau); }
+  .klein { color: var(--grau); font-size: 14px; }
+  details { margin-top: 6px; }
+  summary { cursor: pointer; font-weight: bold; color: var(--gruen); }
+  details p, details li { font-size: 14px; color: #d6d9d2; }
+  label { display: flex; gap: 10px; align-items: flex-start; margin-top: 14px; font-size: 15px; }
+  input[type=checkbox] { width: 20px; height: 20px; margin-top: 2px; accent-color: var(--gruen); }
+  .gesperrt { opacity: .4; pointer-events: none; }
+  code { background: #222a1e; padding: 1px 6px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>SCHULWEG <span>ALARM</span></h1>
+  <p class="sub">NordPing · RB63 Neumünster – Heide – Büsum</p>
+
+  <section class="karte">
+    <h2>Worum geht es?</h2>
+    <p>Du bekommst an Schultagen eine E-Mail mit einer kurzen Grafik, wenn ein Zug der
+      <strong>RB63 zwischen Neumünster, Heide und Büsum</strong> ausfällt (auch teilweise)
+      oder mindestens <strong>5 Minuten Verspätung</strong> hat.</p>
+    <ul>
+      <li>Geprüft wird von <strong>5 bis 8 Uhr</strong> und von <strong>11 bis 15 Uhr</strong>.</li>
+      <li>Höchstens eine Mail je Zug und Tag, keine Werbung, keine Weitergabe.</li>
+      <li>Privater Hinweisdienst ohne Gewähr. Maßgeblich sind die Angaben von nordbahn und DB.</li>
+    </ul>
+  </section>
+
+  <section class="karte">
+    <h2>An- und Abmelden</h2>
+    <p>Mit dem Knopf öffnet sich dein E-Mail-Programm mit einer fertigen Nachricht.
+      Du musst sie nur noch absenden. Die Adresse, von der du schreibst, wird eingetragen
+      bzw. gelöscht. Du bekommst jeweils eine kurze Bestätigung.</p>
+
+    <label>
+      <input type="checkbox" id="zustimmung">
+      <span>Ich habe die Datenschutzhinweise unten gelesen und bin einverstanden, dass meine
+        E-Mail-Adresse für den Schulweg Alarm gespeichert wird. Ich kann mich jederzeit abmelden.</span>
+    </label>
+
+    <div class="knoepfe">
+      <a class="knopf an gesperrt" id="anmelden" href="#">Anmelden</a>
+      <a class="knopf ab" id="abmelden" href="#">Abmelden</a>
+    </div>
+    <p class="klein" style="margin-top:12px">Ohne Knopf geht es auch: eine E-Mail mit dem Betreff
+      <code>ANMELDEN</code> bzw. <code>ABMELDEN</code> an <span class="adresse"></span>.</p>
+  </section>
+
+  <section class="karte">
+    <h2>Datenschutz</h2>
+    <details open>
+      <summary>Datenschutzhinweise lesen</summary>
+      <p><strong>Verantwortlich:</strong> Markus Bothe, privat. Kontakt: <span class="adresse"></span></p>
+      <p><strong>Welche Daten werden gespeichert?</strong> Nur deine E-Mail-Adresse und der Zeitpunkt der Anmeldung.</p>
+      <p><strong>Wofür werden deine Daten gespeichert?</strong> Ausschließlich für den Versand der Schulweg-Meldungen und der
+        An-/Abmeldebestätigung. Keine Werbung, keine Auswertung, keine Weitergabe an Dritte.</p>
+      <p><strong>Rechtsgrundlage:</strong> Deine Einwilligung (Art. 6 Abs. 1 lit. a DSGVO),
+        die du jederzeit durch Abmelden widerrufen kannst.</p>
+      <p><strong>Wo werden die Daten gespeichert?</strong> Auf einem privaten Server in Neuenkirchen des Verantwortlichen
+        in Deutschland. Der Versand läuft über den E-Mail-Anbieter des NordPing-Postfachs.
+        Die Mails gehen als Blindkopie (BCC) raus, andere Empfänger sehen deine Adresse nicht.</p>
+      <p><strong>Löschung:</strong> Sofort bei Abmeldung. Wird der Dienst eingestellt, wird die
+        Liste vollständig gelöscht.</p>
+      <p><strong>Deine Rechte:</strong> Auskunft, Berichtigung, Löschung und Widerruf über die oben
+        genannte Adresse. Du kannst dich außerdem bei einer Datenschutz-Aufsichtsbehörde beschweren,
+        z.&nbsp;B. beim Unabhängigen Landeszentrum für Datenschutz Schleswig-Holstein (ULD).</p>
+      <p><strong>Diese Seite</strong> setzt keine Cookies und lädt keine fremden Inhalte.</p>
+    </details>
+  </section>
+
+  <p class="klein">NordPing Schulweg Alarm · Markus Bothe</p>
+</main>
+
+<script>
+  // Hier die Adresse des NordPing-Postfachs eintragen:
+  const POSTFACH = "nordping.dithmarschen@gmail.com";
+
+  const link = (betreff) =>
+    "mailto:" + POSTFACH + "?subject=" + encodeURIComponent(betreff) +
+    "&body=" + encodeURIComponent(betreff === "ANMELDEN"
+      ? "Bitte trag mich in den NordPing Schulweg Alarm ein. Den Datenschutzhinweisen stimme ich zu."
+      : "Bitte trag mich aus dem NordPing Schulweg Alarm aus.");
+
+  document.querySelectorAll(".adresse").forEach((el) => {
+    el.innerHTML = '<a style="color:#beff00" href="mailto:' + POSTFACH + '">' + POSTFACH + "</a>";
+  });
+
+  const an = document.getElementById("anmelden");
+  const ab = document.getElementById("abmelden");
+  const ok = document.getElementById("zustimmung");
+
+  an.href = link("ANMELDEN");
+  ab.href = link("ABMELDEN");
+
+  ok.addEventListener("change", () => an.classList.toggle("gesperrt", !ok.checked));
+</script>
+</body>
+</html>
